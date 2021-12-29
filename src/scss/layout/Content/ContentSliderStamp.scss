@@ -1,0 +1,145 @@
+.content-slider-stamp {
+  margin-top: -77px;
+  padding: 0 30px;
+
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 29px;
+    bottom: 45px;
+    width: 40px;
+    height: 140px;
+    background-color: transparent;
+    z-index: 1;
+  }
+
+  .slick-active + .slick-active + .slick-active {
+    .stamp-text {
+      opacity: 1;
+      width: 170px;
+      height: 170px;
+      padding: 10px 15px;
+    }
+  }
+
+  .slick-active + .slick-active + .slick-active + .slick-active {
+    .stamp-text {
+      opacity: 0;
+      height: 140px;
+      width: 140px;
+      padding: 0;
+    }
+  }
+
+  .slick-active
+    + .slick-active
+    + .slick-active
+    + .slick-active
+    + .slick-active {
+    .stamp-text {
+      right: 100% !important;
+    }
+  }
+
+  .item-stamp {
+    margin: 115px 0 115px;
+    height: 220px;
+    @include flex-center;
+    display: flex !important;
+    .stamp-img {
+      position: relative;
+      width: fit-content;
+      margin: 0 auto;
+      border-image: url("https://setsail.qodeinteractive.com/wp-content/plugins/setsail-core/assets/img/stamp.png")
+        17 round;
+      border-width: 13px;
+      border-style: solid;
+      filter: drop-shadow(4px 5px 12px rgba(0, 0, 0, 0.07));
+      cursor: pointer;
+      &:hover {
+        .stamp-text {
+          opacity: 1 !important;
+          width: 170px !important;
+          height: 170px !important;
+          padding: 10px 15px !important;
+        }
+      }
+
+      .stamp-text {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        transform: translate(50%, -40%);
+        text-align: center;
+        height: 140px;
+        width: 140px;
+        border-radius: 50%;
+        background-color: #fff;
+        z-index: 1;
+        @include flex-center;
+        flex-direction: column;
+        opacity: 0;
+        transition: 0.6s;
+
+        .title {
+          font-size: 14px;
+          font-weight: 600;
+          line-height: 20px;
+        }
+        .desc {
+          font-size: 13px;
+          line-height: 24px;
+          margin-top: 7px;
+        }
+      }
+    }
+  }
+
+  .slick-arrow {
+    & > i {
+      height: 55px;
+      width: 55px;
+      position: relative;
+      transition: 0.2s;
+
+      &::before {
+        position: absolute;
+        @include position-center;
+        font-size: 40px;
+        z-index: 1;
+        color: $text-color-gray-50;
+        transition: 0.2s;
+      }
+      &:hover::before {
+        color: $cyan-color;
+      }
+    }
+  }
+
+  .slick-prev {
+    left: -50px;
+    &::before {
+      font-size: 0;
+    }
+  }
+  .slick-next {
+    &::before {
+      font-size: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 1239px) {
+  .content-slider-stamp {
+    .slick-arrow i::before {
+      font-size: 0px !important;
+    }
+    .stamp-text {
+      opacity: 1 !important;
+      width: 170px !important;
+      height: 170px !important;
+      padding: 10px 15px !important;
+    }
+  }
+}

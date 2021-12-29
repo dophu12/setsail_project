@@ -1,0 +1,25 @@
+.input-btn {
+  padding: 13px 16px 13px 48px;
+  width: 248px;
+  height: 52px;
+  background-color: #6FDCDF;
+  position: relative;
+  color: #fff;
+  @include flex-center;
+  margin-bottom: 6px;
+
+  i {
+    font-size: 14px;
+    position: relative;
+    left: -20px;
+  }
+
+  input {
+    color: #fff;
+    font-size: 14px;
+    &::placeholder {
+      font-size: 14px;
+      color: #fff;
+    }
+  }
+}

@@ -1,0 +1,430 @@
+//sub-navbar
+.sub-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  background-color: #000;
+  height: 46px;
+  font-size: 13px;
+  z-index: 10;
+
+  .left-inner {
+    padding-left: 20px;
+    ul {
+      @extend .sub-navbar;
+      font-size: 1.2;
+      a {
+        color: #fff;
+        display: block;
+        margin-right: 20px;
+      }
+      i {
+        color: $cyan-color;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .right-inner {
+    @extend .sub-navbar;
+    .social-network {
+      @extend .sub-navbar;
+      height: fit-content;
+      margin-right: 20px;
+      z-index: 0;
+
+      i {
+        font-size: 13px;
+        color: #fff;
+        padding: 5px;
+        margin-right: 6px;
+      }
+    }
+
+    .language {
+      position: relative;
+      &:hover .other-languages {
+        clip-path: inset(0 0 0 0);
+      }
+
+      .current-language {
+        width: 140px;
+        height: 46px;
+        @include flex-center;
+        border: 0;
+        color: #fff;
+        background-color: $cyan-darker-color;
+        font-family: inherit;
+        font-size: 13px;
+        font-weight: 500;
+        cursor: pointer;
+
+        i {
+          margin-left: 4px;
+          font-size: 12px;
+        }
+      }
+
+      .other-languages {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        @include flex-center;
+        flex-direction: column;
+        background-color: $cyan-color;
+        padding: 5px 0;
+        clip-path: inset(0 0 100% 0);
+        transition: 0.2s;
+
+        li {
+          @include flex-center();
+          padding: 15px 0;
+          position: relative;
+          font-weight: 500;
+          cursor: pointer;
+          user-select: none;
+
+          &:hover::before {
+            width: 100%;
+          }
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: calc(100% - 15px);
+            height: 2px;
+            width: 0;
+            transition: 0.2s;
+            background-color: #fff;
+          }
+        }
+      }
+    }
+
+    .user {
+      height: 46px;
+      width: 46px;
+      @include flex-center();
+      background-color: $cyan-color;
+      cursor: pointer;
+
+      .user-icon {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+//navbar
+.navbar {
+  background-color: #30a9ad;
+  @include flex-center;
+  justify-content: space-between;
+  height: 80px;
+  z-index: 10;
+  position: relative;
+
+  &.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    animation: scroll ease 0.2s;
+    @keyframes scroll {
+      from {
+        top: -80px;
+      }
+      to {
+        top: 0;
+      }
+    }
+  }
+
+  .menu-icon__mobile__tablet {
+    display: none;
+    font-size: 20px;
+  }
+  .user-icon__mobile__tablet {
+    display: none;
+    font-size: 25px;
+  }
+
+  &__logo {
+    margin-left: 20px;
+    & a {
+      display: block;
+    }
+
+    &-img {
+      height: 48px;
+    }
+  }
+
+  .menu {
+    &_list {
+      @include flex-center;
+    }
+    &__list__icon-close {
+      display: none;
+    }
+
+    &_item {
+      margin: 0 17px;
+
+      & > a {
+        font-size: 15px;
+        color: $text-color-dark;
+        font-weight: 600;
+        display: block;
+        padding: 20px 20px;
+        position: relative;
+        transition: .1s;
+
+        &:hover {
+          color: #fff;
+
+          &::before{
+            width: calc(100% - 40px);
+            left: 20px;
+          }
+        }
+
+        &::before {
+          content: '';
+          width: 0;
+          height: 3px;
+          background-color: #fff;
+          position: absolute;
+          bottom: 13px;
+          left: 50%;
+          transition: .4s
+        }
+      }
+    }
+  }
+
+  &__right-inner {
+    @include flex-center;
+    margin-right: 10px;
+    & > div {
+      padding: 10px;
+      margin: 5px;
+      cursor: pointer;
+
+      & > i {
+        font-size: 20px;
+      }
+    }
+
+    .navbar__cart {
+      position: relative;
+      &:hover {
+        .navbar__cart__dropdown {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+
+      &__dropdown {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        min-height: 24px;
+        width: 230px;
+        background-color: #fff;
+        box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.2s;
+      }
+
+      &__list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 25px;
+
+        & > li {
+          font-size: 13px;
+          width: 100%;
+          height: 24px;
+          line-height: 24px;
+        }
+      }
+
+      &__no-item-notification {
+        text-align: center;
+      }
+    }
+
+    .navbar__search {
+      &__modal {
+        position: fixed;
+        z-index: 10;
+        inset: 0;
+        @include flex-center;
+        cursor: default;
+        @include fade-out;
+
+        .overlay {
+          position: absolute;
+          inset: 0;
+          background-color: $cyan-color;
+          opacity: 0.8;
+          z-index: 1;
+        }
+
+        .navbar__search__inner {
+          @include flex-center;
+          z-index: 2;
+          height: 82px;
+          position: relative;
+          bottom: 15%;
+          cursor: default;
+
+          .navbar__search__input {
+            background-color: #fff;
+            width: 708px;
+            height: 100%;
+            justify-content: flex-start;
+            margin-bottom: 0;
+
+            & > input {
+              color: $text-color-gray;
+              font-size: 18px;
+              letter-spacing: 0.5px;
+              flex: 1;
+              height: 100%;
+
+              &::placeholder {
+                color: $text-color-gray;
+                font-size: 18px;
+                letter-spacing: 0.5px;
+                font-family: $primary-font;
+              }
+            }
+          }
+
+          .navbar__search__btn {
+            height: 100%;
+            font-size: 16px;
+            letter-spacing: 0.8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.non-display {
+  display: none !important;
+}
+
+.hidden {
+  visibility: hidden !important;
+}
+
+//mobile
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 0 20px;
+    .menu {
+      &_list {
+        width: 100%;
+      }
+    }
+  }
+}
+
+//tablet
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .navbar {
+    padding: 0 60px;
+    .menu {
+      &_list {
+        width: 50%;
+        transition: 0.8s linear;
+      }
+    }
+  }
+}
+
+//mobile and tablet
+@media screen and (max-width: 1023px) {
+  .sub-navbar {
+    display: none;
+  }
+
+  .navbar {
+    .menu-icon__mobile__tablet,
+    .user-icon__mobile__tablet {
+      display: block;
+      color: #fff;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .menu {
+      z-index: 11;
+      position: fixed;
+      @include inset(0, 0, 0, 0);
+
+      .overlay__mobile__table {
+        position: absolute;
+        inset: 0;
+        background-color: #000;
+        opacity: 0.5;
+        z-index: 10;
+      }
+
+      &_list {
+        position: relative;
+        z-index: 12;
+        background-color: #fff;
+        flex-direction: column;
+        height: 100%;
+        transition: 0.4s;
+        left: -100%;
+
+        & > div:first-child {
+          display: block;
+          position: absolute;
+          top: 0;
+          right: 0;
+          font-size: 20px;
+          padding: 10px 15px;
+          margin: 10px;
+          cursor: pointer;
+          &:hover {
+            color: $cyan-color;
+            transition: 0.2s;
+          }
+        }
+
+        & > li {
+          position: relative;
+          margin: 15px 20px;
+          width: calc(100% - 41px);
+          text-align: center;
+          border: 1px solid;
+          border-radius: 10px;
+          transition: 0.2s;
+          overflow: hidden;
+          &:hover {
+            background-color: $cyan-color;
+          }
+
+          & > a::before {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &__right-inner {
+      display: none;
+    }
+  }
+}

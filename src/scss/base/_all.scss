@@ -1,0 +1,13 @@
+@import "./grid";
+@import "./mixins";
+@import "./reset";
+@import "./variable";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}

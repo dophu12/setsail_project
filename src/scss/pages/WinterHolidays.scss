@@ -1,0 +1,147 @@
+.winter-holidays {
+  .hero-section {
+    .tour-filter-holder {
+      display: none;
+    }
+  }
+  .plan-the-perfect-holiday {
+    .content__wrapper {
+      padding-top: 0;
+    }
+    .content__video {
+      display: none;
+    }
+    .content__text__wrapper {
+      display: none;
+    }
+    .content__slider-image__wrapper {
+      margin-top: 20px;
+    }
+    .item-card {
+      border-radius: 0;
+    }
+  }
+
+  .try-now-winter-sports {
+    .content__video .video__highlight-img img {
+      max-width: 850px;
+      width: 100%;
+    }
+
+    .block__footer {
+      justify-content: center;
+      padding-top: 16px;
+      .l-3,
+      .m-6,
+      .c-12 {
+        flex: unset;
+      }
+
+      .item-wrapper {
+        max-width: 850px !important;
+        width: 100% !important;
+
+        .item__text {
+          display: flex;
+          flex-direction: column-reverse;
+          align-items: center;
+
+          .item__desc {
+            width: 100%;
+            margin-bottom: 30px;
+          }
+
+          .item__title {
+            padding: 18px 73px;
+            background-color: $cyan-color;
+            color: #fff;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+          }
+        }
+      }
+    }
+  }
+
+  .top-review {
+    overflow-x: hidden;
+    .content__container {
+      padding-bottom: 107px;
+    }
+    .content__list-image {
+      display: none;
+    }
+    .content__text__wrapper {
+      margin-bottom: 0;
+      .title,
+      .desc {
+        color: #fff !important;
+      }
+    }
+    @include handleDot;
+  }
+
+  .enjoy-your-winter-holiday {
+    .block__footer {
+      padding-top: 21px;
+    }
+  }
+
+  .choose-your-winter-resort {
+    .feature-top {
+      display: flex;
+    }
+    .content__wrapper {
+      padding: 0 50px 70px;
+
+      .item-image {
+        padding: 0 30px;
+        margin-bottom: 60px;
+
+        @include hoverImgEffect;
+        .item-image-link {
+          display: block;
+          border-radius: 50%;
+          overflow: hidden;
+
+          background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .destination {
+          position: absolute;
+          @include inset(0, 0, 0, 0);
+          @include position-center;
+          @include flex-center;
+          font-size: 50px;
+          font-family: $italic-font;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .plan-the-perfect-holiday {
+    .content__slider-image__wrapper {
+      margin-top: 95px !important;
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .block__footer {
+    .item-wrapper {
+      .item__text {
+        .item__desc {
+          width: 100%;
+          margin-bottom: 30px;
+        }
+
+        .item__title {
+          padding: 14px 47px;
+        }
+      }
+    }
+  }
+}

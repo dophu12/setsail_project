@@ -1,0 +1,99 @@
+.content__slider-image__wrapper {
+  overflow-x: hidden;
+  margin-top: 50px;
+
+  .content__slider-image {
+    margin-right: -20px;
+    .item-card {
+      border-radius: 5px;
+      overflow: hidden;
+      margin-right: 20px;
+      margin-bottom: 35px;
+      box-shadow: 0 5px 10px 5px rgba($color: #000000, $alpha: 0.1);
+
+      .item-img {
+        object-fit: cover;
+
+        & > img {
+          width: 100%;
+        }
+      }
+
+      .item-middle-inner {
+        display: flex;
+        align-items: center;
+        color: #fff;
+        background-color: $cyan-color;
+        height: 40px;
+        font-size: 14px;
+        padding: 0 16px;
+
+        i {
+          margin-right: 8px;
+          font-size: 15px;
+        }
+        div {
+          padding: 8px 10px;
+        }
+      }
+
+      .item-text {
+        padding: 31px 25px 33px;
+        background-color: #fff;
+
+        .title {
+          font-size: 20px;
+          margin-bottom: 10px;
+          line-height: 28px;
+          font-weight: 600;
+          color: #000;
+        }
+
+        .desc {
+          font-size: 14px;
+          line-height: 24px;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+
+        .bottom-inner {
+          display: flex;
+          font-size: 14px;
+          margin-top: 10px;
+          font-weight: 600;
+          line-height: 24px;
+
+          .price {
+            margin-right: 20px;
+          }
+          .rating {
+            display: flex;
+            align-items: center;
+
+            i {
+              color: #000;
+              margin-right: 5px;
+              position: relative;
+              top: -1px;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  @include handleDot;
+    
+  /* hiding all bullets by default */
+  .slick-dots li {
+    display: none !important;
+  }
+
+  .slick-dots li {
+    &:nth-child(5n - 4) {
+      display: inline-block !important;
+    }
+  }
+}

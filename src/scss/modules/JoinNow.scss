@@ -1,0 +1,45 @@
+.join-now {
+  background-color: $cyan-color;
+  padding: 40px 20px;
+
+  .grid.wide {
+    display: flex;
+    flex-wrap: wrap;
+    @include flex-center;
+  }
+
+  &__text {
+    font-size: 22px;
+    font-weight: 600;
+    color: #fff;
+    line-height: 60px;
+  }
+  &__btn {
+    background-color: #fff;
+    color: $text-color-dark;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    transition: 0.4s;
+    &:hover {
+      background-color: rgb(35, 169, 175);
+      color: #fff;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .join-now {
+    text-align: center;
+    padding: 20px 5px;
+
+    &__text {
+      font-size: 16px;
+      line-height: 25px;
+    }
+    &__btn {
+      background-color: #fff;
+      font-size: 12px;
+      margin-top: 20px;
+    }
+  }
+}

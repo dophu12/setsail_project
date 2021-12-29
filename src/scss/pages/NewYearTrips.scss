@@ -1,0 +1,129 @@
+.new-year-trips {
+  .hero-section {
+    .slider-image {
+      height: 630px;
+      .slider-text {
+        top: 40%;
+        .sub-heading {
+          font-family: "Arizonia", cursive;
+          font-size: 70px;
+        }
+        .heading {
+          font-family: "Arizonia", cursive;
+          font-size: 150px;
+          line-height: 150px;
+        }
+      }
+    }
+    .tour-filter-holder {
+      bottom: 12%;
+    }
+  }
+
+  .celebrate-new-year {
+    .grid.wide {
+      max-width: 100vw !important;
+      padding: 0 15px;
+    }
+    .wide {
+      width: 100% !important;
+    }
+
+    .content__list-image .item-image {
+      padding: 0 15px;
+      margin-bottom: 30px;
+    }
+
+    .item-image-link {
+      box-shadow: 0 5px 15px 1px rgba($color: #000000, $alpha: 0.1);
+      display: block;
+      overflow: hidden;
+
+      &:hover {
+        img {
+          transform: scale(1.03);
+        }
+      }
+    }
+
+    .inner-wrapper {
+      color: $text-color-dark;
+      text-align: center;
+      padding: 43px 30px 38px;
+
+      .destination {
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        letter-spacing: -0.5px;
+        display: block;
+      }
+
+      .desc {
+        font-size: 14px;
+        line-height: 24px;
+        margin-bottom: 16px;
+      }
+
+      .price {
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 26px;
+      }
+    }
+  }
+
+  .from-our-blog {
+    padding-bottom: 90px;
+    .img-feature {
+      clip-path: inset(0) !important;
+    }
+    .img-feature__text {
+      display: none;
+    }
+  }
+
+  .the-magic-city {
+    .title, .sub-title, .desc {
+      color: #fff !important;
+    }
+  }
+
+  .travel-review {
+    overflow-x: hidden;
+    padding-bottom: 120px;
+    .content__text__wrapper {
+      padding-top: 50px;
+    }
+
+    .card-item  {
+      box-shadow: 0 0 30px 3px rgba($color: #000000, $alpha: 0.1);
+    }
+
+    @include handleDot;
+  }
+
+  @media screen and (max-width: 767px) {
+    .slider-text {
+      top: 25% !important;
+      .sub-heading {
+        font-size: 60px !important;
+      }
+      .heading {
+        font-size: 80px !important;
+        line-height: 80px !important;
+      }
+    }
+    .tour-filter-holder {
+      bottom: 40% !important;
+    }
+  }
+
+  @media screen and (min-width: 1024px) and (max-width: 1400px) {
+    .content__list-image .item-image {
+      max-width: 25%;
+      width: 100%;
+      flex: 25%;
+    }
+  }
+}

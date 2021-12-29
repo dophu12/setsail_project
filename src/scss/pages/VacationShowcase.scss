@@ -1,0 +1,144 @@
+.vacation-showcase {
+  overflow-x: hidden;
+  display: flex;
+
+  .left-slide,
+  .right-slide {
+    height: 100vh;
+    width: 50vw;
+    object-fit: cover;
+
+    .item {
+      height: calc(100vh + 2px);
+      width: 100%;
+      vertical-align: top;
+      object-fit: cover;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+  }
+
+  @mixin sub-title {
+    font-size: 33px;
+    font-family: $italic-font;
+    color: $cyan-color;
+    line-height: 60px;
+  }
+
+  @mixin title {
+    font-size: 65px;
+    font-weight: 600;
+    color: $text-color-dark;
+  }
+
+  @mixin desc {
+    font-size: 17px;
+    line-height: 33px;
+    margin-top: 12px;
+    margin-bottom: 30px;
+  }
+
+  @mixin btn {
+    padding: 14px 42px;
+    background-color: $cyan-color;
+    color: #fff;
+    transition: 0.4s;
+    &:hover {
+      filter: brightness(0.9);
+    }
+  }
+
+  .left-slide {
+    margin-right: -1px;
+    position: relative;
+
+    .item-3 {
+      padding: 0 50px;
+      .sub-title {
+        @include sub-title;
+      }
+      .title {
+        @include title;
+        margin-bottom: 36px;
+      }
+      .content__video {
+        position: relative;
+      }
+    }
+
+    .item-5 {
+      padding: 0 135px 24px;
+      text-align: center;
+      .sub-title {
+        @include sub-title;
+      }
+      .title {
+        @include title;
+      }
+      .desc {
+        @include desc;
+      }
+      .btn {
+        @include btn;
+      }
+    }
+  }
+
+  .right-slide {
+    margin-left: -1px;
+    .item-2 {
+      padding: 0 135px 24px;
+      text-align: center;
+      .sub-title {
+        @include sub-title;
+      }
+      .title {
+        @include title;
+      }
+      .desc {
+        @include desc;
+      }
+      .btn {
+        @include btn;
+      }
+    }
+    .item-4 {
+      padding: 0 50px;
+      text-align: center;
+
+      img {
+        margin-bottom: 30px;
+      }
+
+      p {
+        font-size: 20px;
+        line-height: 30px;
+        margin: 0 60px;
+      }
+
+      h4 {
+        font-family: $italic-font;
+        font-size: 24px;
+        line-height: 63px;
+        margin-top: 8px;
+      }
+    }
+  }
+
+  @include minimizeNavbar;
+
+  .navbar {
+    .menu_link::before {
+      display: none;
+    }
+  }
+}
+@media screen and (max-width: 1023px) {
+  .vacation-showcase {
+    display: block !important;
+    height: calc(1000vh + 20px);
+    overflow: hidden;
+  }
+}

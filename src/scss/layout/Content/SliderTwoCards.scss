@@ -1,0 +1,104 @@
+.slider-2-card {
+  padding: 110px 65px 36px;
+  text-align: center;
+
+  .slick-arrow {
+    font-size: 20px;
+    color: red;
+    z-index: 5;
+    &:hover {
+      color: #fff;
+    }
+
+    &.fas.fa-chevron-left {
+      left: -85px;
+      top: -30px;
+    }
+    &.fas.fa-chevron-right {
+      right: -85px;
+      top: -30px;
+    }
+
+    & > i {
+      height: 55px;
+      width: 55px;
+      border-radius: 50%;
+      position: relative;
+      transition: 0.2s;
+
+      &::before {
+        position: absolute;
+        @include position-center;
+        font-size: 45px;
+        color: $text-color-dark;
+        z-index: 1;
+        transition: 0.2s;
+      }
+    }
+  }
+
+  .slick-prev {
+    left: 50px;
+    &::before {
+      font-size: 0;
+    }
+  }
+  .slick-next {
+    right: 85px;
+    &::before {
+      font-size: 0;
+    }
+  }
+
+  .card {
+    img {
+      margin: 0 auto 30px;
+    }
+    .desc {
+      max-width: 960px;
+      width: 100%;
+      margin: 0 auto;
+      font-size: 20px;
+      line-height: 30px;
+      color: $text-color-gray-50;
+    }
+    .name {
+      font-size: 24px;
+      font-family: $italic-font;
+      line-height: 63px;
+      color: #000;
+      margin-top: 8px;
+    }
+  }
+}
+
+
+@media screen and (max-width: 1023px) {
+  .slick-arrow::before {
+    font-size: 0px !important;
+  }
+  .slider-2-card {
+    padding: 110px 25px 36px;
+  }
+
+  .slider-2-card {
+    .desc {
+      font-size: 17px !important;
+    }
+    .name {
+      font-size: 20px !important;
+    }
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .slider-2-card {
+    .desc {
+      font-size: 14px !important;
+    }
+    .name {
+      font-size: 18px !important;
+    }
+  }
+}

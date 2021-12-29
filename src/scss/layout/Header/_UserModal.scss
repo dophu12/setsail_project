@@ -1,0 +1,133 @@
+.user-modal {
+  @include flex-center;
+  position: fixed;
+  @include inset(0,0,0,0);
+  cursor: default;
+  font-size: 14px;
+  @include fade-out;
+
+  .overlay {
+    opacity: 0.9;
+    background-color: #fff;
+    position: absolute;
+    @include inset(0,0,0,0);
+    z-index: 1;
+  }
+
+  .login {
+    background-color: $cyan-color;
+    font-size: 14px;
+    z-index: 10;
+    width: 308px;
+    position: relative;
+
+    .login-header {
+      @include flex-center;
+      line-height: 52px;
+      cursor: pointer;
+      font-weight: 700;
+
+      .login-heading {
+        flex: 1;
+        text-align: center;
+        background-color: #3abdc1;
+      }
+      .register-heading {
+        @extend .login-heading;
+      }
+      .active {
+        background-color: $cyan-color;
+      }
+    }
+    .login-content {
+      padding: 30px;
+
+      .login-title {
+        padding: 7px 0;
+        font-weight: 600;
+        line-height: 25px;
+        font-size: 20px;
+      }
+
+      .login-desc {
+        line-height: 24px;
+        font-weight: 400;
+        margin-bottom: 23px;
+      }
+
+      .remember-action {
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 20px;
+        cursor: pointer;
+        user-select: none;
+
+        .checkbox {
+          width: 14px;
+          height: 14px;
+          border-radius: 50%;
+          background-color: #fff;
+          margin-right: 14px;
+          position: relative;
+
+          .dot-checkbox {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background-color: $cyan-color;
+            position: absolute;
+            @include position-center;
+          }
+        }
+      }
+
+      .lost-password {
+        margin-top: 10px;
+        line-height: 24px;
+        color: $text-color;
+        cursor: pointer;
+
+        &:hover {
+          color: #000;
+        }
+      }
+
+      .btn-sign-in {
+        margin-top: 19px;
+        line-height: 24px;
+        width: 100%;
+        transition: 0.4s;
+        letter-spacing: 1px;
+
+        &:hover {
+          background-color: #23a9af;
+          color: #fff;
+        }
+      }
+
+      .other-sign-in {
+        margin-top: 20px;
+        margin-bottom: -2px;
+      }
+    }
+
+    .login-footer {
+      @include flex-center;
+      color: #fff;
+
+      .login-with-fb {
+        background-color: #4363a5;
+        letter-spacing: 1px;
+        flex: 1;
+        width: 50%;
+        color: #fff;
+        height: 52px;
+      }
+
+      .login-with-gg {
+        @extend .login-with-fb;
+        background-color: #dd4b39;
+      }
+    }
+  }
+}

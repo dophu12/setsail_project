@@ -1,0 +1,17 @@
+.btn {
+  font-size: 13px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 700;
+  font-family: "Poppins";
+}
+
+.bg-white-btn {
+  background-color: #ffffff;
+  color: $text-color-dark;
+}
+
+.bg-cyan-btn {
+  background-color: $cyan-color;
+  color: #fff;
+}

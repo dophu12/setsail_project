@@ -1,0 +1,14 @@
+@import './scss/main.scss';
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  width: 10px;
+  border-radius: 130px;
+  background-clip: padding-box;
+  color: $cyan-color;
+}
+
+::-webkit-scrollbar-thumb {        
+  box-shadow: inset 0 0 0 10px;
+}
+

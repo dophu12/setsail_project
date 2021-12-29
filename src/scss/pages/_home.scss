@@ -1,0 +1,316 @@
+.home {
+  overflow: hidden;
+  .choose-your-perfect-holiday {
+    .content__wrapper {
+      padding-top: 145px;
+      .content__list-image__wrapper {
+        .content__list-image {
+          .item-image {
+            padding: 0 15px;
+            margin: 15px 0;
+            position: relative;
+            height: fit-content;
+
+            &:nth-child(1),
+            &:nth-child(8),
+            &:nth-child(9) {
+              .item-image-link {
+                border-radius: 50%;
+
+                .image {
+                  filter: brightness(0.85) !important;
+                  border-radius: 50%;
+                }
+              }
+
+              .item-title {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 48px !important;
+                font-family: $italic-font;
+                color: #fff;
+                z-index: 1;
+              }
+            }
+
+            @include hoverImgEffect;
+            .item-image-link {
+              .image {
+                position: relative;
+                width: 100%;
+                transition: 0.5s;
+                vertical-align: middle;
+                z-index: -1;
+              }
+
+              .inner-wrapper {
+                padding: 17px 0px;
+                margin: 0 35px;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                color: #fff;
+                &:hover ~ img {
+                  transform: scale(1.05);
+                }
+
+                .left-inner {
+                  .destination {
+                    font-size: 17px;
+                    font-weight: 600;
+                    line-height: 20px;
+                  }
+
+                  .rating-wrapper {
+                    display: flex;
+
+                    i {
+                      margin-right: 10px;
+                      font-size: 13px;
+                      line-height: 20px;
+                    }
+
+                    .rating-text {
+                      font-size: 14px;
+                      line-height: 20px;
+                      font-weight: 500;
+                    }
+                  }
+                }
+
+                .right-inner {
+                  .price {
+                    font-size: 18px;
+                    font-weight: 700;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .block__footer {
+      width: 100%;
+      padding: 56px 15px 127px 0;
+      display: flex;
+      justify-content: center;
+
+      .item-wrapper {
+        img {
+          max-width: 100%;
+        }
+      }
+      .item__text {
+        display: none;
+      }
+    }
+  }
+
+  .breathtaking-cities {
+    .content__container {
+      background-attachment: fixed;
+    }
+    .content__list-image {
+      display: none;
+    }
+    .content__wrapper {
+      padding-top: 105px;
+
+      .content__text__wrapper {
+        margin-bottom: unset;
+
+        .sub-title,
+        .title,
+        .desc {
+          color: #fff;
+        }
+      }
+
+      .content__video__wrapper {
+        bottom: -50px;
+      }
+    }
+
+    .block__footer {
+      padding-bottom: 75px !important;
+      .item-wrapper {
+        padding: 0 45px 45px;
+        .item-img {
+          width: 76px;
+        }
+      }
+    }
+    @media screen and (max-width: 768px) {
+      .content__video__wrapper {
+        bottom: -10px !important;
+      }
+    }
+  }
+
+  .plan-the-perfect-holiday {
+    background-color: $bg-color-f8;
+    padding-bottom: 105px;
+  }
+
+  .the-unforgettable-mediterranean {
+    .content__container {
+      background-position: top !important;
+    }
+    .content__list-image {
+      padding-bottom: 100px;
+      .item-image {
+        padding: 0 15px;
+        position: relative;
+        z-index: 1;
+        margin-top: 30px;
+
+        &::before {
+          content: attr(data-label);
+          position: absolute;
+          top: 0;
+          right: 15px;
+          line-height: 20px;
+          text-align: center;
+          background-color: $cyan-color;
+          font-size: 13px;
+          color: #fff;
+          padding: 10px 29px;
+        }
+
+        &:last-child::before {
+          display: none;
+        }
+
+        @include hoverImgEffect;
+        .item-image-link {
+          .image {
+            width: 100%;
+            vertical-align: middle;
+            position: relative;
+            z-index: -1;
+          }
+          .inner-wrapper {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            @include flex-center;
+            flex-direction: column;
+            font-weight: 600;
+            color: #fff;
+            padding: 28px 18px;
+
+            .destination {
+              font-size: 22px;
+              line-height: 28px;
+              margin-bottom: 6px;
+            }
+
+            .price {
+              font-size: 18px;
+              line-height: 26px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .read-the-top-travel-review {
+    .content__list-image {
+      display: none;
+    }
+    .content__container {
+      background-attachment: fixed;
+      padding-bottom: 125px;
+
+      .content__wrapper {
+        padding-top: 105px;
+        .content__text__wrapper {
+          margin-bottom: unset;
+
+          .sub-title,
+          .title,
+          .desc {
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    .content__slider-card__wrapper {
+      overflow: hidden;
+    }
+
+    @include handleDot;
+  }
+
+  .choose-your-destination {
+    .content__container {
+      background-position: top;
+
+      .feature-top {
+        display: flex;
+      }
+    }
+    .content__wrapper {
+      padding: 0 50px 70px;
+
+      .content__text__wrapper {
+        padding-top: 205px;
+      }
+
+      .item-image {
+        padding: 0 30px;
+        margin-bottom: 60px;
+        img {
+          border-radius: 50%
+        }
+
+        @include hoverImgEffect;
+        .item-image-link {
+          display: block;
+          border-radius: 50%;
+          overflow: hidden;
+
+          background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .destination {
+          position: absolute;
+          @include inset(0, 0, 0, 0);
+          @include position-center;
+          @include flex-center;
+          font-size: 50px;
+          font-family: $italic-font;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .choose-your-perfect-holiday {
+    .content__wrapper {
+      padding-top: 270px !important;
+    }
+  }
+
+  .breathtaking-cities {
+    .block__footer {
+      .item-wrapper {
+        .item-img {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
